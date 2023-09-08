@@ -1,0 +1,10 @@
+*{
+    box-sizing: border-box;
+    padding: 10px;
+    margin: auto;
+}
+
+.img {
+    background: url(../images/p1.jpg) no-repeat ;
+   
+}
