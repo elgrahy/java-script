@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    
+
+
+
+    <script>
+        // Sample product data
+    const productsData = [
+        {
+            imageUrl: 'assets/images/product1.jpg',
+            title: 'Product 1',
+            price: '$10.99'
+        },
+        {
+            imageUrl: 'assets/images/product2.jpg',
+            title: 'Product 2',
+            price: '$19.99'
+        },
+        {
+            imageUrl: 'assets/images/product3.jpg',
+            title: 'Product 3',
+            price: '$14.49'
+        }
+    ];
+    
+    // Function to create a product div
+    function createProductDiv(product) {
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('product');
+    
+        // Create elements for image, title, price, and buttons
+        const image = document.createElement('img');
+        image.src = product.imageUrl;
+    
+        const title = document.createElement('h2');
+        title.textContent = product.title;
+    
+        const price = document.createElement('p');
+        price.textContent = product.price;
+    
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove Image';
+        removeButton.addEventListener('click', () => {
+            image.remove();
+        });
+    
+        const replaceButton = document.createElement('button');
+        replaceButton.textContent = 'Replace Image';
+        replaceButton.addEventListener('click', () => {
+            const h1Element = document.createElement('h1');
+            h1Element.textContent = 'New Title'; // Set the desired title for the <h1> element
+            productDiv.replaceChild(h1Element, image);
+        });
+    
+        // Append elements to the product div
+        productDiv.appendChild(image);
+        productDiv.appendChild(title);
+        productDiv.appendChild(price);
+        productDiv.appendChild(removeButton);
+        productDiv.appendChild(replaceButton);
+    
+        return productDiv;
+    }
+    
+    const body = document.getElementById('body');
+    // create the products section
+    const products = document.createElement('section');
+    
+    // Create product divs and add them to the products section
+    productsData.forEach((product) => {
+        const productDiv = createProductDiv(product);
+        products.appendChild(productDiv);
+        body.appendChild(products);
+    });
+    
+      </script>
+
+</body>
+</html>
