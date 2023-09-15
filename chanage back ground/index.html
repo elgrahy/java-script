@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random background</title>
+</head>
+<body>
+  <button>Change background color hash</button>
+  <button>Change background color name</button>
+  <script>
+  const btn = document.querySelectorAll('button')[0];
+  const btn2 = document.querySelectorAll('button')[1];
+  var letters = '0123456789ABCDEF';
+  btn.addEventListener('click',()=> {
+    var hash = '#';
+    for (var i = 0; i < 6; i++) {
+      hash += letters[Math.floor(Math.random() * 16)];
+    }
+    console.log(hash);
+    document.body.style.backgroundColor = hash;
+  } );
+  //colorNames
+  const colorNames = ["red", "blue", "green", "yellow", "purple", "orange"];
+  btn2.addEventListener('click',()=> {
+    const randomColor = Math.floor(Math.random() * colorNames.length);
+    console.log(randomColor)
+    document.body.style.backgroundColor = colorNames[randomColor];
+  } );
+  </script>
+</body>
+</html>
