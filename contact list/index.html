@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact list</title>
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+   <main>
+    <header class="header">
+        <div class="search_div">
+            <form>
+                <label for="search">
+                    <i class="fa fa-search"></i>
+                    <input type="search" id="search" name="search" placeholder="search contact">
+                </label>
+            </form>
+        </div> <!--search div-->
+
+        <div class="add_div">
+            <button class="addNew">
+                <i class="fas fa-user-plus"> </i> add new contact
+            </button>
+        </div> <!--add div-->
+
+    </header>
+      
+    <section class="form">
+        <div class="addNewContact">
+            <i class="fa fa-user-plus"></i>
+            <form action="">
+                <input type="text" id="contact_form_name" placeholder="full name">
+                <input type="text" id="contact_form_phone" placeholder="phone">
+                <input type="email" id="contact_form_email" placeholder="email address">
+                <input type="text" id="contact_form_address" placeholder="home address">
+            </form>
+            <button class="save btn">
+                <i class="fas fa-save">
+                    <span>save</span>
+                </i>
+            </button>
+            <div class="close">
+                <i class="far fa-window-close"></i>
+            </div><!--close-->
+        </div><!--add new contact-->
+
+    </section><!--form-->
+
+    <section class="table_section">
+        <table>
+            <thead>
+                <tr>
+                    <th>#id</th>
+                    <th>name</th>
+                    <th>phone</th>
+                    <th>email</th>
+                    <th>address</th>
+                    <th>edit</th>
+                    <th>delete</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+              
+            </tbody>
+        </table>
+
+    </section>
+
+
+   </main> 
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
