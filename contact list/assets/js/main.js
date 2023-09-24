@@ -15,7 +15,7 @@ closeFormBtn.addEventListener('click',()=>{
 //creat array to store data
 let savedData = localStorage.getItem("contact");
 //
-let contactList = savedData === "Null" ? [] : JSON.parse(savedData);
+let contactList =[];
 //select the input of the form
 let contactFormName = document.getElementById("contact_form_name");
 let contactFormPhone = document.getElementById("contact_form_phone");
@@ -72,6 +72,7 @@ let saveBtn = document.querySelector(".save");
  
 let saveBtnHandler = () =>{
     newContact();
+    localStorage.setItem("contact",contactList);
     resetFormContact();
     renderContacts();
     formSection.classList.remove("overlay"),
@@ -96,7 +97,8 @@ contactTableTbody.addEventListener('click', e=>{
         contactForm.style.display = "block";
         //update handeller
         let updateHandeler = () =>{
-            //
+            //new
+            console.log("edit")
             let updatedContact = {
             contactId :parseInt(id),
             contactName :contactFormName.value,
@@ -126,8 +128,9 @@ contactTableTbody.addEventListener('click', e=>{
     }
     if(e.target.classList.contains("red")){
        let tr = e.target.parentElement;
-       let id = tr .dataset.id;
+       let id = tr.dataset.id;
        let index = parseInt(id) - 1;
+       contactList.splice(index,1);
        localStorage.setItem("contact",JSON.stringify(contactList));
        renderContacts();
     }
