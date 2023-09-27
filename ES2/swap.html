@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+  //Old way 
+  let address = "ahmed";
+  let name = "Egypt";
+  let box = address;
+  address = name;
+  name = box;
+  console.log(`the name is ${name} and the address is ${address}`);
+  // in ES6 
+  let address2 = "ahmed";
+  let name2 = 20;
+  [address2, name2] = [name2, address2]
+  console.log(`the name is ${name2} and the address is ${address2}`)
+</script>
+</body>
+</html>

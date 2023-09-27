@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+  // array
+  //shallow clone ( the same reference )
+  const numbers = [5, 10, 15];
+  const newNumbers = numbers;
+  newNumbers[0] = 30;
+  console.log(numbers);// the original array value changed
+  // deep clone ( new copy ) 
+  const numbers2 = [5, 10, 15];
+  const newNumbers2 = [...numbers2];
+  newNumbers2[0] = 30;
+  console.log(numbers2);// original array values still not changed
+  console.log(newNumbers2);// new array with new values
+
+  // objects
+  // ( shallow clone ) 
+  const car = {
+    name: "fiat",
+    color: "red",
+    speed: 120
+  }
+  const shallowCar = car;
+  car.name = "BMW";
+  console.log(shallowCar); // the clone object changed
+  console.log(car);
+  // ( deep clone ) 
+  const car2 = {
+    name: "fiat",
+    color: "red",
+    speed: 120
+  }
+  const deepCar = {...car2};
+  car2.name = "BMW";
+  console.log(deepCar);// the clone object not changed
+  console.log(car2);
+</script>
+</body>
+</html>

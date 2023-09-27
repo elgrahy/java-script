@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    const car = {
+    name: "BMW",
+    motorCapacity: ["1600cc", "2000cc"],
+    colors: {
+    mainColors: {
+    c1: "red",
+    c2: "black",
+    otherColors: ["yellow", "orange", ["blue", "pink"]]
+    }
+    },
+    }
+    function showCar(){
+      const { name , motorCapacity: [ m1 , m2] , colors:{mainColors:{otherColors:[c1 , c2 , [c21,c22]]}}} = car;
+    return console.log(`the name is ${name} and the motor is : ${m2} and the color is ${c21}`)
+    }
+    showCar();
+    // expected return the name is BMW and the motor is 2000CC and the color is blue
+  </script>
+</body>
+</html>
